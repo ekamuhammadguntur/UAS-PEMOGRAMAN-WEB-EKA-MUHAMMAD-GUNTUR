@@ -9,13 +9,15 @@ use Illuminate\Http\Request;
 class DaftarUlangController extends Controller
 {
     public function index()
-    {
-        $data = DaftarUlang::with('pendaftar')
-            ->orderBy('id', 'desc')
-            ->get();
+{
+    $pendaftar = Pendaftar::orderBy('no_daftar')->get();
 
-        return view('daftarulang.index', compact('data'));
-    }
+    $data = DaftarUlang::with('pendaftar')
+        ->orderBy('id', 'desc')
+        ->get();
+
+    return view('daftarulang.index', compact('pendaftar', 'data'));
+}
 
 
     public function create()

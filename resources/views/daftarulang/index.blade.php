@@ -14,7 +14,7 @@
     <td>
         <select name="no_daftar" id="no_daftar" class="form-select" required>
             <option value="">-- Pilih No Daftar --</option>
-            @foreach($data as $p)
+            @foreach($pendaftar as $p)
                 <option value="{{ $p->no_daftar }}"
                     data-nama="{{ $p->nama }}"
                     data-hari="{{ $p->hari }}"
